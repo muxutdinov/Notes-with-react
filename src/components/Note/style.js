@@ -9,6 +9,7 @@ min-height: 170px;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
+white-space: pre-wrap;
 `;
 export const FooterWrapper = styled.div`
 display: flex;
