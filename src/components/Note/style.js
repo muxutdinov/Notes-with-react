@@ -20,8 +20,8 @@ justify-content: space-between;
 
 export const NoteFooter = styled.div``;
 export const Delete = styled.img`
-  width: 10px;
-  height: 13px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
 `;
-// fa fa-trash	
-// fa fa-trash-o

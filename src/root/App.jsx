@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import NotesList from "../components/NoteList";
 import { Container } from "./AppStyle";
-
+import { Search } from "../components/Search";
 export const App = () => {
   const [notes, setNotes] = useState([
     {
@@ -39,10 +39,12 @@ export const App = () => {
     const newNotes = notes.filter((note) => note.id !== id);
     setNotes(newNotes);
   };
+  const [searchText, setSearchText] = useState('')
   return (
     <Container>
+      <Search handleSearchNote={setSearchText}/>
       <NotesList 
-      notes={notes}
+      notes={notes.filter((note)=>note.text.toLowerCase().includes(searchText))}
        handleAddNote={addNote}
        handleDeleteNote={deleteNote}
        />
