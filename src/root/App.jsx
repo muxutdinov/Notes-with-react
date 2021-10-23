@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import NotesList from "../components/NoteList";
-import { Container } from "./AppStyle";
+import { AllWrapper, Container } from "./AppStyle";
 import { Search } from "../components/Search";
+import { Header } from "../components/Header";
 export const App = () => {
   const [notes, setNotes] = useState([
     {
@@ -10,17 +11,17 @@ export const App = () => {
       date: "22/10/2021",
     },
     {
-      id:2,
+      id: 2,
       text: "This is my second note!",
       date: "22/10/2021",
     },
     {
-      id:3,
+      id: 3,
       text: "This is my third note!",
       date: "22/10/2021",
     },
     {
-      id:4,
+      id: 4,
       text: "This is my new note!",
       date: "30/10/2021",
     },
@@ -39,16 +40,26 @@ export const App = () => {
     const newNotes = notes.filter((note) => note.id !== id);
     setNotes(newNotes);
   };
-  const [searchText, setSearchText] = useState('')
+
+  const [searchText, setSearchText] = useState("");
+
+  const [darkMode, setDarkMode] = useState(false);
   return (
-    <Container>
-      <Search handleSearchNote={setSearchText}/>
-      <NotesList 
-      notes={notes.filter((note)=>note.text.toLowerCase().includes(searchText))}
-       handleAddNote={addNote}
-       handleDeleteNote={deleteNote}
-       />
-    </Container>
+    <AllWrapper>
+      <div className={`${({setDarkMode})} &&  DarkMode`}>
+        <Container>
+          <Header handleToggleDarkMode={darkMode} />
+          <Search handleSearchNote={setSearchText} />
+          <NotesList
+            notes={notes.filter((note) =>
+              note.text.toLowerCase().includes(searchText)
+            )}
+            handleAddNote={addNote}
+            handleDeleteNote={deleteNote}
+          />
+        </Container>
+      </div>
+    </AllWrapper>
   );
 };
 export default App;
