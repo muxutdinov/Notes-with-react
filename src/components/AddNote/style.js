@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Notenew = styled.div`
+  height: 200px;
+  width: 310px;
   background-color: #67d7cc;
   border-radius: 15px;
 `;
@@ -20,14 +22,14 @@ export const NoteFooter = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content:space-around;
+  justify-content: space-around;
 `;
 export const Save = styled.button`
   background-color: #e1e1e1;
   border: none;
   padding: 5px 10px 5px 10px;
   border-radius: 15px;
-  :hover{
+  :hover {
     background-color: #ededed;
     cursor: pointer;
   }

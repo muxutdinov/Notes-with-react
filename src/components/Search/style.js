@@ -11,6 +11,8 @@ export const Searchs = styled.div`
   input {
     border: none;
     background: rgb(233, 233, 233);
+    width: 100%;
+    height: 100%;
   }
   input:focus {
     outline: none;
